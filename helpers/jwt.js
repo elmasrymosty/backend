@@ -1,4 +1,5 @@
 const { expressjwt : expressJwt } = require('express-jwt');
+//for heoku heroku config:set Secret=mysecrte45634
 
 function authJwt() {
     const secret = process.env.Secret;
@@ -10,7 +11,7 @@ function authJwt() {
         isRevoked: isRevoked
     }).unless({
         path: [
-            { url: /\/api\/v1\/users\/.*$/, methods: ['POST','PUT', 'DELETE','GET', 'OPTIONS'] }, // Allow user update and delete
+            { url: /\/api\/v1\/users(.*)/ , methods: ['POST','PUT', 'DELETE','GET', 'OPTIONS'] }, // Allow user update and delete
        { url: /\/public\/uploads(.*)/, methods: ['POST','GET','DELETE', 'OPTIONS'] },
         { url: /\/api\/v1\/products(.*)/, methods: ['POST','GET','PUT','DELETE', 'OPTIONS'] },
   { url: /\/api\/v1\/categories(.*)/, methods: ['POST','PUT','DELETE','GET' ,'OPTIONS'] },
