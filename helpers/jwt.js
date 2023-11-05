@@ -26,9 +26,8 @@ function authJwt() {
           { url: /\/api\/v1\/ordercharge(.*)/, methods: ['POST','GET','PUT','DELETE', 'OPTIONS'] },
           { url: /\/api\/v1\/banners(.*)/, methods: ['POST','GET','PUT','DELETE', 'OPTIONS'] },
           
-       //    `${api}/users/login`,
-       //  `${api}/users`,
-     
+       `api/v1/users/login`,
+         `api/v1/users`,
      
      //  `${api}/users/get/count`,
       //  `${api}/orders/get/totalsales`,
