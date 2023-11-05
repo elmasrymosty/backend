@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 mongoose.set("strictQuery", false);
 const cors = require('cors');
 require('dotenv/config');
-//const authJwt = require('./helpers/jwt');
+const authJwt = require('./helpers/jwt');
 
 const errorHandler = require('./helpers/error-handler');
 
@@ -18,7 +18,7 @@ app.options('*', cors());
 //middleware
 app.use(express.json());
 app.use(morgan('tiny'));
-//app.use(authJwt());
+app.use(authJwt());
 app.use('/public/uploads', express.static(__dirname + '/public/uploads'));
 app.use(errorHandler);
 
