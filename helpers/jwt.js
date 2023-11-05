@@ -1,5 +1,6 @@
 const { expressjwt : expressJwt } = require('express-jwt');
-//for heoku heroku config:set Secret=mysecrte45634
+//for heroku config:set Secret=mysecrte45634 -a newbakce
+
 
 function authJwt() {
     const secret = process.env.Secret;
@@ -19,8 +20,8 @@ function authJwt() {
           { url: /\/api\/v1\/ordercharge(.*)/, methods: ['POST','GET','PUT','DELETE', 'OPTIONS'] },
           { url: /\/api\/v1\/banners(.*)/, methods: ['POST','GET','PUT','DELETE', 'OPTIONS'] },
           
-           `${api}/users/login`,
-         `${api}/users`,
+       //    `${api}/users/login`,
+       //  `${api}/users`,
      
      
      //  `${api}/users/get/count`,
