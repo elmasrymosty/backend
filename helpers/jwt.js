@@ -4,12 +4,15 @@ const { expressjwt : expressJwt } = require('express-jwt');
 
 function authJwt() {
     const secret = process.env.Secret;
+    console.log(secret)
     const api = process.env.API_URL;
 //const api = process.env.API_URL.replace(/\/$/, '');
     return expressJwt({
         secret,
+   
         algorithms: ['HS256'],
         isRevoked: isRevoked
+
     }).unless({
         path: [
             { url: /\/api\/v1\/users(.*)/ , methods: ['POST','PUT', 'DELETE','GET', 'OPTIONS'] }, // Allow user update and delete
