@@ -1,4 +1,6 @@
-const { expressjwt : expressJwt } = require('express-jwt');
+//const { expressjwt : expressJwt } = require('express-jwt');
+const expressJwt = require('express-jwt');
+
 //for heroku config:set Secret=mysecrte45634 -a newbakce
 
 
